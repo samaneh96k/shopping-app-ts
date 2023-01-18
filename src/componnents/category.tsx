@@ -5,7 +5,7 @@ const Category:React.FC<{onChangeProduct:(text:string)=>void}> = (props) => {
   const [category, setCategory] = useState([]);
 
   async function doGetRequest() {
-    let res = await axios.get("https://fakestoreapi.com/products/categories");
+    let res = await axios.get(`${process.env.REACT_APP_DOMAIN}/products/categories`);
     let data = res.data;
 
     setCategory(data);

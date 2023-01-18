@@ -28,7 +28,7 @@ function App() {
   }
   async function doGetRequest() {
     setIsLoading(true);
-    let res = await axios.get("https://fakestoreapi.com/products");
+    let res = await axios.get(`${process.env.REACT_APP_DOMAIN}/products`);
 
     let data = res.data;
     setProducts(data);
