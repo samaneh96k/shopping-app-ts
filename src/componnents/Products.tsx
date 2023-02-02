@@ -1,5 +1,5 @@
 
-import _, { range } from "lodash";
+import  { range } from "lodash";
 import React, {  useState } from "react";
 import { paginate } from "../utils/paginate";
 import CartItem from "./cart";
@@ -20,7 +20,7 @@ interface Rate{
 const Products:React.FC<{isLoading:boolean,filteredProducts:Item[]}> = (props) => {
  
   const [currentPage,setCurrentPage]=useState(1);
-  const [perPage,]=useState(5);
+  const [perPage,]=useState(4);
 
   const totalProducts = props.filteredProducts.length;
 
@@ -63,10 +63,10 @@ const Products:React.FC<{isLoading:boolean,filteredProducts:Item[]}> = (props) =
       <div className="flex  align-center justify-center ">
         <ul className="flex  align-center justify-center  p-2">
           {pages.map((p:number,index:number) =>
-            <li className="p-2 cursor-pointer" key={index}>
-              <a onClick={() => onChangePage(p)}>
+            <li className="p-2 cursor-pointer " key={index}>
+              <button className="p-2 bg-red-200  rounded-full" onClick={() => onChangePage(p)}>
                 {p}
-              </a>
+              </button>
             </li>
           )}
         </ul>

@@ -29,11 +29,12 @@ const CartItem: React.FC<Item> = props => {
     );
   };
   return (
-    <div className="border-solid shadow-md xl:w-48 lg:w-48 md:w-48  sm:w-32 p-4 m-2  flex flex-col ">
+    <div className="border-solid shadow-md xl:min-w-48 lg:w-48 md:w-48  sm:min-w-32 p-4 m-2  flex flex-col ">
       <div className="aspect-w-16 aspect-h-16">
         <img
           className="className='rounded-2xl  w-full h-full object-center  lg:w-full lg:h-full' "
           src={props.image}
+          alt=""
         />
       </div>
       <div className="flex-1 flex-col flex justify-between  w-full ">
@@ -41,7 +42,8 @@ const CartItem: React.FC<Item> = props => {
           <p className="text-sm text-center font-bold m-2 ">
             {props.title}
           </p>
-        <div>
+        <div className="flex">
+        <div className="flex">
         <p className="font-bold text-center text-red-600/100 m-2">
             {props.price} $
           </p>
@@ -55,6 +57,7 @@ const CartItem: React.FC<Item> = props => {
           >
             BUY
           </button>
+   </div>
      
 
         {/* <div className="w-full m-8 ">
